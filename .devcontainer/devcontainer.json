@@ -1,0 +1,19 @@
+{
+    "name" : "container-dev",
+    "image": "openanolis/anolisos:8.9-x86_64",
+    "postCreateCommand": "bash ./.devcontainer/install.sh",
+    "capAdd": [
+        "SYS_PTRACE","SYS_ADMIN"
+    ],
+    "mounts": [{ "source": "dind-var-lib-docker", "target": "${containerWorkspaceFolder}/var", "type": "volume" }],
+    "privileged": true,
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.go",
+                "aleksandra.go-group-imports",
+                "ms-vscode.makefile-tools"
+            ]
+        }
+    }
+  }
